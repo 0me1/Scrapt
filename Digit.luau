@@ -672,7 +672,7 @@ Tab:CreateToggle({
 				until Result and Result.Status
 			end
 			Flags.Dig.CurrentValue = true
-			Flags.LegitPiles.CurrentValue = false
+			Flags.LegitPiles.CurrentValue = true
 			Character:PivotTo(SavedPosition)
 		end
 	end,
