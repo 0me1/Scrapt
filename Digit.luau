@@ -221,7 +221,7 @@ Tab:CreateDivider()
 
 Tab:CreateToggle({
 	Name = "🕳️ • Auto Legit Create Piles (Needed for Legit Dig)",
-	CurrentValue = false,
+	CurrentValue = false, 
 	Flag = "LegitPiles",
 	Callback = function(Value)	
 		while Flags.LegitPiles.CurrentValue and task.wait() do
@@ -657,6 +657,7 @@ Tab:CreateToggle({
 						if not Ronald then
 							continue
 						end
+						Flags.LegitPiles.CurrentValue = false
 						Flags.Dig.CurrentValue = false
 						Character:PivotTo(Ronald:GetPivot())
 						--task.wait(0.1)
@@ -670,7 +671,8 @@ Tab:CreateToggle({
 					task.wait()
 				until Result and Result.Status
 			end
-			-- Flags.Dig.CurrentValue = true
+			Flags.Dig.CurrentValue = true
+			Flags.LegitPiles.CurrentValue = false
 			Character:PivotTo(SavedPosition)
 		end
 	end,
