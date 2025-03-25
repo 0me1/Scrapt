@@ -657,7 +657,7 @@ Tab:CreateToggle({
 						if not Ronald then
 							continue
 						end
-
+						Flags.Dig.CurrentValue = false
 						Character:PivotTo(Ronald:GetPivot())
 						--task.wait(0.1)
 					end
@@ -670,7 +670,7 @@ Tab:CreateToggle({
 					task.wait()
 				until Result and Result.Status
 			end
-			
+			-- Flags.Dig.CurrentValue = true
 			Character:PivotTo(SavedPosition)
 		end
 	end,
