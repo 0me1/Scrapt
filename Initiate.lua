@@ -17,14 +17,14 @@ PlaceName = PlaceName:gsub("[^%a]", "")
 
 --loadstring(game:HttpGet("https://github.com/alyssagithub/Scripts/raw/main/FrostByte/Analytics.luau"))()
 
-local Success, Code: string = pcall(game.HttpGet, game, `https://github.com/alyssagithub/Scripts/raw/main/FrostByte/Games/{PlaceName}.luau`)
+local Success, Code: string = pcall(game.HttpGet, game, `https://github.com/0me1/Scrapt/tree/main/Games/{PlaceName}.luau`)
 
 if Success and Code:find("ScriptVersion = ") then
 	Notify("Game found, the script is loading.")
 	getgenv().PlaceFileName = PlaceName
 else
 	Notify("Game not found, loading universal.")
-	Code = game:HttpGet("https://github.com/alyssagithub/Scripts/raw/main/FrostByte/Games/Universal.luau")
+	Code = game:HttpGet("https://github.com/0me1/Scrapt/tree/main/Games/Universal.luau")
 end
 
 getgenv().FrostByteHandleFunction(loadstring(Code))
